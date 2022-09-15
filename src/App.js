@@ -10,3 +10,6 @@ function App() {
 }
 
 export default App;
+
+//packages need for this project
+//npm install @reduxjs/toolkit    react-router-dom  react-redux
