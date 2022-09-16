@@ -5,7 +5,6 @@ import Index from './routes/Index';
 function App() {
   return (
     <div className="App">
-       <h1>redux crud app</h1>
        <Index/>
     </div>
   );
