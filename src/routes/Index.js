@@ -13,8 +13,8 @@ const Index = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/show-book" element={<AddBooks />} />
-          <Route path="/add-book" element={<BooksView />} />
+          <Route path="/show-book" element={<BooksView />} />
+          <Route path="/add-book" element={<AddBooks />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
