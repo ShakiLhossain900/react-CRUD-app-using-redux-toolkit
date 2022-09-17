@@ -9,13 +9,15 @@ import Home from "../pages/Home";
 const Index = () => {
   return (
     <BrowserRouter>
-    <Navbar/>
-      <Routes>
-        <Route path="/"  element={<Home/>}/>
-        <Route path="/show-book"  element={<AddBooks/>}/>
-        <Route path="/add-book"  element={<BooksView/>}/>
-        <Route path="*"  element={<ErrorPage/>}/>
-      </Routes>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/show-book" element={<AddBooks />} />
+          <Route path="/add-book" element={<BooksView />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 };
