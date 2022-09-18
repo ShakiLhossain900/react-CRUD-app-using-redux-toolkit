@@ -5,6 +5,7 @@ import BooksView from "../features/books/BooksView";
 import Navbar from "../layouts/Navbar";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
+import Footer from "../layouts/Footer";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 };

@@ -68,11 +68,3 @@ input {
   padding: 0.2rem;
 }
 
-footer {
-  background-color: antiquewhite;
-  height: 5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
