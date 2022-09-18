@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 const BooksView = () => {
   const books = useSelector((state) => state.booksReducer.books);
-   console.log(books);
+  console.log(books);
   return (
     <div>
       <h2>List of Books</h2>
@@ -20,15 +20,17 @@ const BooksView = () => {
           {books &&
             books.map((book) => {
               const { id, title, author } = book;
-              return <tr>
-                <td>{id}</td>
-                <td>{title}</td>
-                <td>{author}</td>
-                <td>
-                   <button >Edit</button> 
-                   <button >Delete</button> 
-                </td>
-              </tr>;
+              return (
+                <tr>
+                  <td>{id}</td>
+                  <td>{title}</td>
+                  <td>{author}</td>
+                  <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                  </td>
+                </tr>
+              );
             })}
         </tbody>
       </table>
