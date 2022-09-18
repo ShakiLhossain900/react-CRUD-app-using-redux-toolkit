@@ -14,3 +14,4 @@ export default App;
 
 //packages need for this project
 //npm install @reduxjs/toolkit    react-router-dom  react-redux
+//CRUD = create, read, update, delete,
