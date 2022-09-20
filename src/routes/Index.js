@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Home from "../pages/Home";
 import AddBook from "../features/books/AddBooks";
 import BooksView from "../features/books/BooksView";
-import EditBook from "../features/books/EditBooks";
+import EditBook from "../features/books/EditBook";
 import Navbar from "../layouts/Navbar";
 import Error from "../pages/ErrorPage";
 import Home from "../pages/Home";
