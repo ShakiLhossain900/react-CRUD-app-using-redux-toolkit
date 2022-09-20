@@ -21,7 +21,7 @@ const BooksView = () => {
             books.map((book) => {
               const { id, title, author } = book;
               return (
-                <tr>
+                <tr key={id}>
                   <td>{id}</td>
                   <td>{title}</td>
                   <td>{author}</td>
