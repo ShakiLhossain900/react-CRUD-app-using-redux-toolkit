@@ -1,11 +1,18 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AddBooks from "../features/books/AddBooks";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import AddBook from "../fetaures/books/AddBook";
+// import BooksView from "../fetaures/books/BooksView";
+// import EditBook from "../fetaures/books/EditBook";
+// import Navbar from "../layouts/Navbar";
+// import Error from "../pages/ErrorPage";
+// import Home from "../pages/Home";
+import AddBook from "../features/books/AddBooks";
 import BooksView from "../features/books/BooksView";
+import EditBook from "../features/books/EditBooks";
 import Navbar from "../layouts/Navbar";
-import ErrorPage from "../pages/ErrorPage";
+import Error from "../pages/ErrorPage";
 import Home from "../pages/Home";
-import Footer from "../layouts/Footer";
+
 
 const Index = () => {
   return (
@@ -14,12 +21,12 @@ const Index = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/show-book" element={<BooksView />} />
-          <Route path="/add-book" element={<AddBooks />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/show-books" element={<BooksView />} />
+          <Route path="/add-book" element={<AddBook />} />
+          <Route path="/edit-book" element={<EditBook />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </main>
-      <Footer />
     </BrowserRouter>
   );
 };

@@ -1,32 +1,27 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import addBooks from './BooksSlice'
+import { useNavigate } from "react-router-dom";
+import { addBook } from "./BooksSlice";
+import { v4 as uuidv4 } from "uuid";
 
-const AddBooks = () => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-
-  const dispatch = useDispatch()
-
-//amader koto ta book ache amra ta dekte chacci and ata useSelector use kore dekte chacci
-const numberOfBooks = useSelector((state)=>state.booksReducer.books.length);
+const AddBook = () => {
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const book = {id:numberOfBooks+1,title, author};
- 
-    dispatch(addBooks(book));
-
-  }
-
-
+    const book = { id: uuidv4(), title, author };
+    dispatch(addBook(book));
+    navigate("/show-books", { replace: true });
+  };
   return (
     <div>
-      <h2>Add your books</h2>
-      <form onSubmit={handleSubmit} >
+      <h2>Add Book</h2>
+      <form onSubmit={handleSubmit}>
         <div className="form-field">
-          <label htmlFor="title">Title:</label>
+          <label htmlFor="title">Title: </label>
           <input
             type="text"
             id="title"
@@ -37,7 +32,7 @@ const numberOfBooks = useSelector((state)=>state.booksReducer.books.length);
           />
         </div>
         <div className="form-field">
-          <label htmlFor="author">Author:</label>
+          <label htmlFor="author">Author: </label>
           <input
             type="text"
             id="author"
@@ -47,10 +42,12 @@ const numberOfBooks = useSelector((state)=>state.booksReducer.books.length);
             required
           />
         </div>
-        <button type="submit">Add book</button>
+        <button type="submit">Add Book</button>
       </form>
     </div>
   );
 };
 
-export default AddBooks;
+export default AddBook;
+
+// CRUD - > CREATE, READ,
