@@ -1,11 +1,23 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import addBooks from './BooksSlice'
 
 const AddBooks = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const dispatch = useDispatch()
+
+//amader koto ta book ache amra ta dekte chacci and ata useSelector use kore dekte chacci
+const numberOfBooks = useSelector((state)=>state.booksReducer.books.length);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const book = {id:numberOfBooks+1,title, author};
+ 
+    dispatch(addBooks(book));
+
   }
 
 
@@ -35,7 +47,7 @@ const AddBooks = () => {
             required
           />
         </div>
-        <button>Add book</button>
+        <button type="submit">Add book</button>
       </form>
     </div>
   );

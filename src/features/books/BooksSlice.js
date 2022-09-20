@@ -6,7 +6,6 @@ const initialBooks = {
   books: [
     { id: '1', title: "History of SS BlockChainIT", author: "Gazi Shakil" },
     { id: '2', title: "Love Bangladesh", author: "Shamima akter" },
-    { id: '3', title: "The life can change", author: "Gazi md shakil hossain" },
 
   ],
 };
@@ -17,9 +16,14 @@ export const booksSlice = createSlice({
     initialState:initialBooks,
     reducers: {
         showBooks : (state) => state,  //reducer er vitor object akare ami akta akta kore object showBooks er vitor rakhbu and 
-    },
+        addBooks: (state, action) =>{
+          state.books.push(action.payload);
+        }
+      },
 
 })
 
-export const {showBooks} =booksSlice.actions;
+export const {showBooks, addBooks} =booksSlice.actions;
 export default booksSlice.reducer;
+
+///error books can't added to the book list
